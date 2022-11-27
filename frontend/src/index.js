@@ -12,7 +12,7 @@ root.render(
   
   
 <Router>
-<GoogleOAuthProvider clientId="118320632153-8evj6t6uhifq0itaccek70vj6ul7tdoi.apps.googleusercontent.com" > 
+<GoogleOAuthProvider clientId={Process.env.CLIENTID} > 
    <App />
   </GoogleOAuthProvider>;
   </Router>

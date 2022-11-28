@@ -1,7 +1,7 @@
-import {React, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import {React} from 'react'
+//import { useNavigate } from 'react-router-dom'
 import { GoogleLogin } from '@react-oauth/google';
-import snappyVid from '../assets/snappy.mp4'
+import snappyVid from '../assets/snappy3.mp4'
 import logo from '../assets/logo-white.png'
 
 const Login = () => {
@@ -32,9 +32,7 @@ shape='pill'
     console.log('Login Failed');
   }}
 />
-
 </div>
-
 </div>
     </div>
     </div>

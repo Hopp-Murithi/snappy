@@ -9,15 +9,13 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  
-  
-<Router>
-<GoogleOAuthProvider clientId={Process.env.CLIENTID} > 
-   <App />
-  </GoogleOAuthProvider>;
-  </Router>
-  
- 
+    
+    <GoogleOAuthProvider clientId="1011035964489-82ldg8ik64ee04c8ruiviug59uppqn30.apps.googleusercontent.com" > 
+      <Router>
+        <App />
+      </Router>
+    </GoogleOAuthProvider>
+    
   </React.StrictMode>
 );
 

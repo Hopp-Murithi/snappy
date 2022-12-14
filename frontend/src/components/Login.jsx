@@ -1,10 +1,14 @@
 import {React} from 'react'
-//import { useNavigate } from 'react-router-dom'
 import { GoogleLogin } from '@react-oauth/google';
-import snappyVid from '../assets/snappy3.mp4'
+import jwt_decode from "jwt-decode";
+import snappyVid from '../assets/medium.mp4'
 import logo from '../assets/logo-white.png'
+import { client } from '../client';
+//import { nanoid } from 'nanoid'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate= useNavigate();
 
   return (
     <div className='flex justify-start items-center flex-col h-screen '>
@@ -26,7 +30,22 @@ const Login = () => {
 <GoogleLogin
 shape='pill'
   onSuccess={credentialResponse => {
-    console.log(credentialResponse);
+    console.log(credentialResponse.credential);
+    localStorage.setItem('user',JSON.stringify(credentialResponse.credential))
+   const {name,sub,picture} = jwt_decode(credentialResponse.credential)
+const doc = {
+  _id: sub,
+  _type: 'user',
+  userName:name,
+  image:  picture
+}
+console.log(name,sub,picture)
+client.createIfNotExists(doc)
+.then(()=>{
+  navigate('/',{replace:true})
+})
+
+   
   }}
   onError={() => {
     console.log('Login Failed');

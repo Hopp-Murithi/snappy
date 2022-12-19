@@ -39,7 +39,7 @@ const doc = {
   userName:name,
   image:  picture
 }
-console.log(name,sub,picture)
+//console.log(name,sub,picture)
 client.createIfNotExists(doc)
 .then(()=>{
   navigate('/',{replace:true})

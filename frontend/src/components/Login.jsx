@@ -1,6 +1,6 @@
 import {React} from 'react'
 import { GoogleLogin } from '@react-oauth/google';
-import jwt_decode from "jwt-decode";
+//import jwt_decode from "jwt-decode";
 import snappyVid from '../assets/medium.mp4'
 import logo from '../assets/logo-white.png'
 import { client } from '../client';
@@ -32,7 +32,7 @@ shape='pill'
   onSuccess={credentialResponse => {
     console.log(credentialResponse.credential);
     localStorage.setItem('user',JSON.stringify(credentialResponse.credential))
-   const {name,sub,picture} = jwt_decode(credentialResponse.credential)
+   const {name,sub,picture} = credentialResponse.credential
 const doc = {
   _id: sub,
   _type: 'user',

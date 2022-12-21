@@ -1,3 +1,8 @@
 export {default as UserProfile} from '../components/userProfile'
 export {default as Sidebar} from '../components/sidebar'
 export {default as Login} from '../components/Login'
+export {default as Search} from '../components/Search'
+export {default as Feed} from '../components/Feed'
+export {default as PinDetails} from '../components/PinDetails'
+export {default as CreatePin} from '../components/CreatePin'
+export {default as Navbar} from '../components/Navbar'

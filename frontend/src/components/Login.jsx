@@ -1,6 +1,6 @@
 import {React} from 'react'
 import { GoogleLogin } from '@react-oauth/google';
-//import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 import snappyVid from '../assets/medium.mp4'
 import logo from '../assets/logo-white.png'
 import { client } from '../client';
@@ -30,16 +30,17 @@ const Login = () => {
 <GoogleLogin
 shape='pill'
   onSuccess={credentialResponse => {
-    console.log(credentialResponse.credential);
+    //console.log(credentialResponse.credential);
     localStorage.setItem('user',JSON.stringify(credentialResponse.credential))
-   const {name,sub,picture} = credentialResponse.credential
+   const {name,sub,picture} = jwt_decode(credentialResponse.credential)
 const doc = {
-  _id: sub,
+  _id: sub, 
   _type: 'user',
   userName:name,
   image:  picture
 }
-//console.log(name,sub,picture)
+console.log(name,sub,picture)
+
 client.createIfNotExists(doc)
 .then(()=>{
   navigate('/',{replace:true})

@@ -4,12 +4,13 @@ import {Navbar, CreatePin,Feed,Search,PinDetails} from '../components/index';
 
 
 const Pins = ({user}) => {
+ // console.log(`pins ${user[0]}`);
   const [searchTerm, setsearchTerm] = useState(' ');
 
   return (
     <div className='px-2 md:px-5'>
      <div className='bg-gray-50'>
-       <Navbar searchTerm={searchTerm} setsearchTerm={setsearchTerm}/>
+       <Navbar searchTerm={searchTerm} setsearchTerm={setsearchTerm} user={user}/>
      </div>
      <div className='h-full'>
       <Routes>

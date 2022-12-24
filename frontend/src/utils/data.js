@@ -14,23 +14,22 @@ export const searchQuery = (searchTerm) => {
         _id,
         destination,
         postedBy -> {
-_id,
-userName,
-image
-        },
+                      _id,
+                     userName,
+                      image
+                    },
         save[] {
             key,
             postedBy -> {
-                _id,
-                userName,
-                image
-            },
+                          _id,
+                          userName,
+                          image
+                        },
         },
     }`;
 
   return query;
- 
-}
+};
 export const feedQuery = `*[_type == 'pin'] | order(createdAt desc) {
     image{
         asset -> {
@@ -40,17 +39,16 @@ export const feedQuery = `*[_type == 'pin'] | order(createdAt desc) {
     _id,
     destination,
     postedBy -> {
-_id,
-userName,
-image
-    },
+                  _id,
+                 userName,
+                  image
+                },
     save[] {
         key,
         postedBy -> {
-            _id,
-            userName,
-            image
-        },
-    },
-}
+                      _id,
+                      userName,
+                      image
+                    },
+    },  
 }`;

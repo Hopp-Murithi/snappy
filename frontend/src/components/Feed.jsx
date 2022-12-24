@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { searchQuery,feedQuery } from "../utils/data";
+import { searchQuery, feedQuery } from "../utils/data";
 import { client } from "../client";
 import { MasonryLayout, Spinner } from "./index";
 
@@ -18,17 +18,17 @@ const Feed = () => {
         setLoading(false);
       });
     } else {
-      client.fetch(feedQuery)
-      .then((data) => {
+      client.fetch(feedQuery).then((data) => {
+        console.log(`this is ${data}`);
         setPins(data);
+       
         setLoading(false);
       });
     }
   }, [categoryId]);
 
   if (loading) return <Spinner message="Hi there,just a moment..." />;
-
-  <div>{pins && <MasonryLayout pins={pins}/>}</div>;
+  return <div>{pins && <MasonryLayout pins={pins} />}</div>;
 };
 
 export default Feed;

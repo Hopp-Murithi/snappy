@@ -20,7 +20,7 @@ fields: [{
 {
     name:'category',
     title:'category',
-    type:'url'
+    type:'string'
 },
 {
     name:'image',

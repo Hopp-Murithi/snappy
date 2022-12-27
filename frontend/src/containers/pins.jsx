@@ -4,7 +4,7 @@ import {Navbar, CreatePin,Feed,Search,PinDetails} from '../components/index';
 
 
 const Pins = ({user}) => {
- // console.log(`pins ${user[0]}`);
+ 
   const [searchTerm, setsearchTerm] = useState(' ');
 
   return (

@@ -5,7 +5,6 @@ import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { client, urlFor } from "../client";
-import jwt_decode from "jwt-decode";
 import { fetchUser } from "../utils/fetchUser";
 
 const Pin = ({ pin }) => {
@@ -60,11 +59,13 @@ const Pin = ({ pin }) => {
         onClick={() => navigate(`/pin-detail/${_id}`)}
         className="relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
       >
-        <img
-          className="rounded-lg w-full"
-          alt="user-post"
-          src={urlFor(image).width(250).url()}
-        />
+        {image && (
+          <img
+            className="rounded-lg w-full "
+            src={urlFor(image).width(250).url()}
+            alt="user-post"
+          />
+        )}
         {postHovered && (
           <div className="absolute w-full h-full top-0 flex flex-col justify-between p-1 pb-2 pr-2 pt-2 z-50">
             <div className="flex items-center justify-between">

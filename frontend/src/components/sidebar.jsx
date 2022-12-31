@@ -48,7 +48,7 @@ const Sidebar = ({ user, closeToggle }) => {
               onClick={handleCloseSidebar}
               key={category.name}
             >
-              <img src={category.image} className="w-9 h-9 rounded-full shadow-sm" />
+              <img src={category.image} className="w-9 h-9 rounded-full shadow-sm" alt="category" />
               {category.name}
             </NavLink>
           ))}
@@ -60,7 +60,7 @@ const Sidebar = ({ user, closeToggle }) => {
           className="flex gap-2 my-5 mb-3 p-2 items-center bg-white rounded-lg shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
-          <img src={user.image} className="w-1o h-10 rounded-full" />
+          <img src={user.image} className="w-1o h-10 rounded-full" alt="user" />
           <p>{user.userName}</p>
           <IoIosArrowForward/>
         </Link>

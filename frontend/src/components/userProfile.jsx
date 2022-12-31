@@ -70,7 +70,7 @@ const UserProfile = () => {
               alt="user-pic"
             />
             <img
-              className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
+              className="rounded-full w-22 h-22 md:w-30 md:h-30 -mt-10 shadow-xl object-cover"
               src={user.image}
               alt="user-pic"
             />

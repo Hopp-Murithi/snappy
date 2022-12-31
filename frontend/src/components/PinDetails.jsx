@@ -90,7 +90,7 @@ const PinDetail = ({ user }) => {
               </a>
             </div>
             <a href={pinDetail.destination} target="_blank" rel="noreferrer" className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
-              {pinDetail.destination.slice(8,20)}
+              {pinDetail.destination}
             </a>
           </div>
           <div>

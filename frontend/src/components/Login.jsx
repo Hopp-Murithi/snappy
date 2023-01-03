@@ -29,7 +29,6 @@ const Login = () => {
             <GoogleLogin
               shape="pill"
               onSuccess={(credentialResponse) => {
-                
                 localStorage.setItem(
                   "user",
                   JSON.stringify(credentialResponse.credential)

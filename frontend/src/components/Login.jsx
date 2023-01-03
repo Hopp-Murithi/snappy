@@ -4,7 +4,6 @@ import jwt_decode from "jwt-decode";
 import snappyVid from "../assets/medium.mp4";
 import logo from "../assets/logo-white.png";
 import { client } from "../client";
-//import { nanoid } from 'nanoid'
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -30,7 +29,6 @@ const Login = () => {
             <GoogleLogin
               shape="pill"
               onSuccess={(credentialResponse) => {
-                //console.log(credentialResponse.credential);
                 localStorage.setItem(
                   "user",
                   JSON.stringify(credentialResponse.credential)

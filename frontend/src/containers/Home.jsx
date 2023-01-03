@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HiMenu } from "react-icons/hi";
-//import { nanoid } from 'nanoid'
+
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, json, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import { Sidebar, UserProfile } from "../components/index";
 import { userQuery } from "../utils/data";
 import { client } from "../client";
